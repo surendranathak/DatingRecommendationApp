@@ -1,6 +1,6 @@
 "# DatingRecommendationApp"
 # prerequisite to run App
- "Jdk version > jdk 8"
+ "Jdk version > jdk 1.8"
  
 "Used maven pom.xml for dependecies added"
 
