@@ -49,6 +49,7 @@ class RecommendationServiceImplSpec extends Specification {
 
     def "test all players has same age"(){
         given:
+        players=[]
         playerA = PlayerFixture.createPlayer([name:  "UserA", gender:  Gender.FEMALE,age:  25, interests:["Cricket", "Tennis"]])
         players.add(playerA);
         playerB = PlayerFixture.createPlayer([name:  "UserB", gender:  Gender.MALE,age:  25, interests:["Cricket","Football"]]);
@@ -72,6 +73,7 @@ class RecommendationServiceImplSpec extends Specification {
 
     def "test all players has more age"(){
         given:
+        players=[];
         playerA = PlayerFixture.createPlayer([name:  "UserA", gender:  Gender.FEMALE,age:  25, interests:["Cricket", "Tennis"]])
         players.add(playerA);
         playerB = PlayerFixture.createPlayer([name:  "UserB", gender:  Gender.MALE,age:  27, interests:["Cricket","Football"]]);
@@ -89,7 +91,7 @@ class RecommendationServiceImplSpec extends Specification {
         then:
         players.size() == 2
         playerD.gender == Gender.FEMALE
-        players*.name == ["UserC","UserB"]
+        players*.name == ["UserB","UserC"]
         players*.gender == [Gender.MALE,Gender.MALE]
     }
 
